@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 22, 2016 at 04:53 PM
+-- Generation Time: Dec 22, 2016 at 08:37 PM
 -- Server version: 5.6.28
 -- PHP Version: 7.0.10
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `LoanRequest1`
+-- Database: `Loanrequest1`
 --
 
 -- --------------------------------------------------------
@@ -10445,9 +10445,12 @@ CREATE TABLE `tbl_user` (
   `statustype` varchar(30) DEFAULT NULL COMMENT 'สถานะ',
   `mobile` varchar(10) DEFAULT NULL COMMENT 'เบอร์โทร',
   `email` varchar(100) DEFAULT NULL COMMENT 'อีเมล์',
-  `addressregistration` varchar(250) DEFAULT NULL COMMENT 'ที่อยู่ตามทะเบียนบ้าน',
-  `addresscurrent` varchar(250) DEFAULT NULL COMMENT 'ที่อยู่ปัจจุบัน',
-  `addresssenddoc` varchar(250) DEFAULT NULL COMMENT 'ที่อยู่จัดส่งเอกสาร',
+  `nationality` varchar(50) DEFAULT NULL,
+  `jobtype` varchar(100) DEFAULT NULL COMMENT 'อาชีพ',
+  `province` varchar(100) DEFAULT NULL COMMENT 'ที่อยู่ปัจจุบัน',
+  `amphur` varchar(100) DEFAULT NULL COMMENT 'ที่อยู่ทะเบียนบ้าน',
+  `district` varchar(100) DEFAULT NULL COMMENT 'ที่อยู่จัดส่',
+  `address` varchar(100) DEFAULT NULL COMMENT 'ที่อยู่จ',
   `roleId` int(11) NOT NULL DEFAULT '0' COMMENT 'รหัสสิทธิ',
   `created` timestamp NULL DEFAULT NULL COMMENT 'วันที่สร้าง',
   `createBy` varchar(50) DEFAULT NULL COMMENT 'ชื่อผู้สร้าง',
@@ -10460,10 +10463,9 @@ CREATE TABLE `tbl_user` (
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `citizen_id`, `username`, `password`, `title_type`, `firstName`, `lastName`, `birthdate`, `age`, `statustype`, `mobile`, `email`, `addressregistration`, `addresscurrent`, `addresssenddoc`, `roleId`, `created`, `createBy`, `updated`, `updateBy`, `status`) VALUES
-(60, '1111111111111', 'admin', 'admin', 'นาย', 'สุเมธ', 'แก่นแก้ว', '1994-03-10', 22, 'โสด', '0833412924', 'sumet68@hotmail.com', 'หนองสองห้อง\r\nขอนแก่น', 'หนองสองห้อง\r\nขอนแก่น', 'หนองสองห้อง\r\nขอนแก่น', 1, '2016-06-12 15:54:18', 'สุเมธ', '2016-06-12 15:54:18', 'สุเมธ', '1'),
-(2, '140980024', 'sumet', '12345', 'นาย', 'สุเมธ', 'แก่นแก้ว', '2016-11-10', 22, 'โสด', '083333333', 'sumat68@hotmail.com', 'มหาสารคาม', 'มหาสารคาม', 'มหาสารคาม', 2, '2016-06-12 15:54:18', 'brasszero', '2016-12-15 12:04:49', 'สุเมธ', '1'),
-(1, '1409800246422', 'sumet', '1234', 'นาย', 'สุเมธ', 'แก่นแก้ว', '2537-03-10', NULL, 'โสด', '0833412924', 'sumet68@hotmail.com', 'rmu', 'rmu', 'rmu', 1, '2016-06-12 15:54:18', 'brassziro', '2016-06-12 15:54:18', 'brassziro', '1');
+INSERT INTO `tbl_user` (`user_id`, `citizen_id`, `username`, `password`, `title_type`, `firstName`, `lastName`, `birthdate`, `age`, `statustype`, `mobile`, `email`, `nationality`, `jobtype`, `province`, `amphur`, `district`, `address`, `roleId`, `created`, `createBy`, `updated`, `updateBy`, `status`) VALUES
+(127, '111111111111', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '1'),
+(128, '2343234234234', 'user', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, '1');
 
 --
 -- Indexes for dumped tables
@@ -10644,4 +10646,4 @@ ALTER TABLE `tbl_sub_menu`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
